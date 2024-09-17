@@ -1,0 +1,118 @@
+footer {
+  padding: 64px 24px 12px 24px;
+  background-color: transparent;
+  color: white;
+  margin: 80px 0 0 0;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.9)
+  );
+  width: 100vw;
+}
+
+.logo-img {
+  width: 140px;
+}
+
+.footer-main-part {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.contact-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.fa-solid {
+  margin-right: 12px;
+  color: var(--main-color);
+}
+
+.fa-location-dot {
+  padding-left: 3px;
+  margin-right: 14px;
+}
+
+.social-media-h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.social-media-items {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 32px;
+}
+
+.fa-brands {
+  color: var(--main-color);
+  transition: transform 0.3s, color 0.3s;
+  will-change: transform;
+}
+
+.fa-brands:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.fa-facebook {
+  color: rgba(24, 119, 242, 1);
+}
+
+.fa-instagram {
+  background: linear-gradient(
+    45deg,
+    rgba(103, 58, 183, 1) 0%,
+    rgba(233, 30, 99, 1) 25%,
+    rgba(255, 87, 34, 1) 50%,
+    rgba(255, 193, 7, 1) 75%,
+    rgba(103, 58, 183, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-tiktok {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 45, 85, 1) 0%,
+    rgba(0, 199, 140, 1) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tel-nr,
+.mail {
+  color: var(--main-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tel-nr:hover,
+.mail:hover {
+  color: var(--main-lighter-color);
+}
+
+.all-rights-reserved {
+  font-size: 16px;
+  padding-top: 16px;
+  margin-top: 32px;
+  text-align: center;
+  border-top: 1px solid var(--main-color);
+  font-style: italic;
+}

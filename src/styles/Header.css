@@ -1,0 +1,45 @@
+header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-img {
+  width: 160px;
+}
+
+.header-img img {
+  width: 100%;
+}
+
+.header-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title h2,
+.header-title p {
+  text-align: center;
+}
+
+.header-title h2 {
+  margin-bottom: 8px;
+  font-size: 72px;
+  font-weight: 900;
+}
+
+.header-title p {
+  font-style: italic;
+  font-size: 20px;
+  color: var(--main-lighter-color);
+}
+
+.cynology-logo {
+  width: 160px;
+}
+
+.cynology-logo img {
+  width: 100%;
+}

@@ -1,0 +1,39 @@
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  font-size: 20px;
+  margin-top: 24px;
+  box-shadow: 2px 2px 5px black;
+  padding: 12px;
+  position: relative;
+}
+
+.nav-list li {
+  position: relative;
+  padding: 4px;
+  transition: transform 0.3s;
+  will-change: transform;
+}
+
+.nav-list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: rgba(65, 31, 8, 0.9);
+  transition: width 0.3s ease-out;
+}
+
+.nav-list li:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.nav-list li:hover::after {
+  width: 100%;
+}
