@@ -1,4 +1,5 @@
 :root {
   --main-color: rgba(65, 31, 8, 0.95);
   --main-lighter-color: rgba(65, 31, 8, 0.7);
+  --main-color-hamburger: rgba(65, 31, 8, 1);
 }

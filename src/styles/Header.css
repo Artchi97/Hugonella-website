@@ -43,3 +43,71 @@ header {
 .cynology-logo img {
   width: 100%;
 }
+
+@media only screen and (max-width: 1500px) {
+  .header-img {
+    width: 100px;
+  }
+
+  .cynology-logo {
+    width: 100px;
+  }
+  .header-title h2 {
+    font-size: 48px;
+  }
+
+  .header-title p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .header-img {
+    width: 80px;
+  }
+  .header-title h2 {
+    font-size: 32px;
+  }
+
+  .header-title p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cynology-logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .header-img {
+    width: 60px;
+  }
+
+  .header-title h2 {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .header-img {
+    width: 40px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .header-img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 210px) {
+  .header-title h2 {
+    font-size: 20px;
+  }
+
+  .header-title p {
+    font-size: 10px;
+  }
+}

@@ -9,17 +9,17 @@ export default function Footer() {
           <h2 className="contact-h2">Skontaktuj się z nami:</h2>
           <ul className="contact-list">
             <li className="contact-item">
-              <i class="fa-solid fa-location-dot"></i>Gaj, Wielkopolskie
+              <i className="fa-solid fa-location-dot"></i>Gaj, Wielkopolskie
             </li>
             <li className="contact-item">
-              <i class="fa-solid fa-phone"></i>Tel. kom.:{" "}
+              <i className="fa-solid fa-phone"></i>Tel. kom.:{" "}
               <a className="tel-nr" href="tel:+48727541233">
                 +48 727 541 233
               </a>
             </li>
 
             <li className="contact-item">
-              <i class="fa-solid fa-envelope"></i>E-mail:{" "}
+              <i className="fa-solid fa-envelope"></i>E-mail:{" "}
               <a className="mail" href="mailto:kingakatarzynska@gmail.pl">
                 kingakatarzynska@gmail.com
               </a>
@@ -36,7 +36,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-facebook"></i>
+                <i className="fa-brands fa-facebook"></i>
               </a>
             </li>
             <li className="social-media-item">
@@ -45,7 +45,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-instagram"></i>
               </a>
             </li>
             <li className="social-media-item">
@@ -54,7 +54,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-tiktok"></i>
+                <i className="fa-brands fa-tiktok"></i>
               </a>
             </li>
           </ul>

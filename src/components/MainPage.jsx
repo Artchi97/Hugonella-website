@@ -1,10 +1,10 @@
 import "../styles/MainPage.css";
-import teddy from "../assets/Teddy2.jpg";
+import teddy from "../assets/Teddy5-medium.jpg";
 
 export default function MainPage() {
   return (
     <div className="photo-description-div">
-      <div className="slider">
+      <div className="main-photo">
         <img src={teddy} alt="Teddy" />
       </div>
       <div className="main-sentence">
