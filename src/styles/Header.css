@@ -1,8 +1,21 @@
 header {
-  padding: 24px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(183, 164, 145, 0.75),
+    rgba(183, 164, 145, 0)
+  );
+
+  width: 100vw;
+}
+
+.whole-div-content {
+  width: 70vw;
+  margin: 0 auto;
+  padding: 24px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 12px;
 }
 
 .header-img {
@@ -61,12 +74,15 @@ header {
   }
 }
 
+@media only screen and (max-width: 1300px) {
+  .whole-div-content {
+    width: 80vw;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .header-img {
     width: 80px;
-  }
-  .header-title h2 {
-    font-size: 32px;
   }
 
   .header-title p {
@@ -74,25 +90,43 @@ header {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .cynology-logo {
-    display: none;
+@media only screen and (max-width: 800px) {
+  .header-title h2 {
+    font-size: 32px;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
+  .header-title h2 {
+    font-size: 32px;
+  }
+
+  .whole-div-content {
+    width: 100%;
+    padding: 24px 24px;
+  }
+  .cynology-logo {
+    width: 80px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   .header-img {
     width: 60px;
   }
 
-  .header-title h2 {
-    font-size: 24px;
+  .cynology-logo {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 350px) {
   .header-img {
     width: 40px;
+  }
+
+  .header-title h2 {
+    font-size: 24px;
   }
 }
 
@@ -102,7 +136,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 210px) {
+@media only screen and (max-width: 225px) {
   .header-title h2 {
     font-size: 20px;
   }

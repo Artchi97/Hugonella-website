@@ -12,6 +12,11 @@
 
 body {
   background-image: url("./assets/background.jpg");
+  /* background-image: linear-gradient(
+    to top right,
+    var(--background-color1),
+    var(--background-color2)
+  ); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

@@ -3,12 +3,10 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 32px;
-  margin-top: 80px;
-  padding: 24px;
 }
 
 .dog-main-container {
-  width: 600px;
+  width: 100%;
 }
 
 .dog-container {
@@ -20,16 +18,18 @@
   position: relative;
   transition: box-shadow 0.3s;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
 .dog-main-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   /* object-position: center; */
   overflow: hidden;
   margin: 0 auto;
+  display: block;
 }
 
 .dog-container::after {
@@ -56,10 +56,10 @@
 
 .dog-title {
   text-align: center;
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 24px;
   font-weight: bold;
-  color: rgba(126, 106, 10, 0.8);
+  color: var(--title-color);
 }
 
 .dog-official-name {
@@ -125,6 +125,7 @@
   .dog-title,
   .dog-official-name,
   .dog-name {
+    padding: 0 12px;
     font-size: 12px;
   }
 }
