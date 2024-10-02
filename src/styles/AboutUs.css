@@ -1,0 +1,50 @@
+.about-us-photo-div {
+  width: 50%;
+  float: left;
+  margin-right: 32px;
+}
+
+.about-us-img {
+  width: 100%;
+}
+
+.about-us-section {
+  font-size: 32px;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.paragraph-one {
+  margin-bottom: 24px;
+}
+
+.breeding-name {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1500px) {
+  .about-us-section {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .about-us-photo-div {
+    width: 100%;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about-us-section {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .about-us-section {
+    padding: 0 16px 0 16px;
+  }
+}

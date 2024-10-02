@@ -58,7 +58,7 @@ const dogsData = [
     ],
     lineage: "https://www.k9data.com/pedigree.asp?ID=989493",
     status: "retired",
-    titles: [],
+    titles: ["Champion Polski"],
   },
   {
     dogName: "Hugo",

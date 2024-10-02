@@ -5,7 +5,7 @@ export default function MainPage() {
   return (
     <div className="photo-description-div">
       <div className="main-photo">
-        <img src={teddy} alt="Teddy" />
+        <img src={teddy} alt="Teddy" loading="lazy" />
       </div>
       <div className="main-sentence">
         <p>

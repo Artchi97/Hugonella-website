@@ -32,6 +32,7 @@ export default function DogDetails({ showsData }) {
           className="dog-details-image"
           src={dog.images[0]}
           alt={dog.dogName}
+          loading="lazy"
         />
       </div>
       <div className="details-below-img">
@@ -72,6 +73,7 @@ export default function DogDetails({ showsData }) {
           {" "}
           Wystawy
         </button>
+        <button className="details-button">Galeria</button>
       </div>
     </div>
   );

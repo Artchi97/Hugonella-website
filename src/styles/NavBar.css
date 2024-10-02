@@ -21,7 +21,7 @@ nav {
 
 .nav-list li {
   position: relative;
-  padding: 4px 12px;
+  padding: 6px 12px;
   transition: transform 0.3s, background-color 0.3s, color 0.3s;
   will-change: transform;
   border-radius: 15px;

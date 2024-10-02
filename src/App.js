@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Header from "./components/Header.jsx";
@@ -9,6 +9,8 @@ import Footer from "./components/Footer.jsx";
 import OurDogs from "./components/OurDogs.jsx";
 import DogDetails from "./components/DogDetails.jsx";
 import DogShows from "./components/DogShows.jsx";
+import AboutUs from "./components/AboutUs.jsx";
+import Puppies from "./components/Puppies.jsx";
 
 import "./App.css";
 
@@ -72,6 +74,8 @@ function App() {
               path="/shows/:dogName"
               element={<DogShows showsData={showsData} />}
             ></Route>
+            <Route path="/puppies" element={<Puppies />}></Route>
+            <Route path="/about-us" element={<AboutUs />}></Route>
           </Routes>
         </main>
       </div>

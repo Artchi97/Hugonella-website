@@ -17,6 +17,7 @@ export default function OurDogs() {
                 className="dog-main-image"
                 src={dog.images[0]}
                 alt={dog.dogName}
+                loading="lazy"
               />
             </div>
           </Link>
@@ -34,12 +35,13 @@ export default function OurDogs() {
 
       {retiredDogs.map((dog, index) => (
         <div key={index} className="dog-main-container">
-          <Link to={`/dog-details/${index}`}>
+          <Link to={`/dog-details/${dog.dogName}`}>
             <div className="dog-container" key={index}>
               <img
                 className="dog-main-image"
                 src={dog.images[0]}
                 alt={dog.dogName}
+                loading="lazy"
               />
             </div>
           </Link>

@@ -6,7 +6,7 @@
 }
 
 .dog-main-container {
-  width: 100%;
+  width: 40%;
 }
 
 .dog-container {
@@ -80,22 +80,22 @@
   text-align: center;
   padding-top: 80px;
   margin-bottom: 80px;
-  font-size: 64px;
+  font-size: 40px;
   font-weight: bold;
   border-top: 3px dotted var(--main-lighter-color);
 }
 
-@media only screen and (max-width: 768px) {
-  .h2-retired {
-    font-size: 48px;
-    margin-bottom: 48px;
-    padding-top: 64px;
+@media only screen and (max-width: 1200px) {
+  .dog-main-container {
+    width: 80%;
   }
 }
 
-@media only screen and (max-width: 580px) {
+@media only screen and (max-width: 768px) {
   .h2-retired {
     font-size: 32px;
+    margin-bottom: 48px;
+    padding-top: 64px;
   }
 
   .dog-title,
@@ -105,11 +105,13 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
   .h2-retired {
-    font-size: 32px;
+    font-size: 24px;
   }
+}
 
+@media only screen and (max-width: 480px) {
   .dog-name {
     margin-bottom: 48px;
   }
@@ -117,7 +119,6 @@
 
 @media only screen and (max-width: 380px) {
   .h2-retired {
-    font-size: 24px;
     margin-bottom: 32px;
     padding-top: 48px;
   }
