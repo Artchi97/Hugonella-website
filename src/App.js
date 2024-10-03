@@ -11,6 +11,7 @@ import DogDetails from "./components/DogDetails.jsx";
 import DogShows from "./components/DogShows.jsx";
 import AboutUs from "./components/AboutUs.jsx";
 import Puppies from "./components/Puppies.jsx";
+import DogDetailsGallery from "./components/DogDetailsGallery.jsx";
 
 import "./App.css";
 
@@ -73,6 +74,10 @@ function App() {
             <Route
               path="/shows/:dogName"
               element={<DogShows showsData={showsData} />}
+            ></Route>
+            <Route
+              path="/dog-gallery/:dogName"
+              element={<DogDetailsGallery />}
             ></Route>
             <Route path="/puppies" element={<Puppies />}></Route>
             <Route path="/about-us" element={<AboutUs />}></Route>

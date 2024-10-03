@@ -1,7 +1,36 @@
+import { useState } from "react";
 import "../styles/Puppies.css";
 import litters from "../litters";
+import Modal from "./Modal";
 
 export default function Puppies() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [activeLitterPhotos, setActiveLitterPhotos] = useState([]);
+
+  function handleOpenModal(photos, index) {
+    setActiveLitterPhotos(photos);
+    setActiveImageIndex(index);
+    setIsModalOpen(true);
+    console.log(isModalOpen, activeImageIndex, activeLitterPhotos);
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
+
+  function handleShowPreviousImage() {
+    setActiveImageIndex((prevIndex) =>
+      prevIndex === 0 ? activeLitterPhotos.length - 1 : prevIndex - 1
+    );
+  }
+
+  function handleShowNextImage() {
+    setActiveImageIndex((prevIndex) =>
+      prevIndex === activeLitterPhotos.length - 1 ? 0 : prevIndex + 1
+    );
+  }
+
   return (
     <div className="dog-details-gallery-container">
       {litters.map((litter) => (
@@ -25,8 +54,12 @@ export default function Puppies() {
             {litter.dogName}
           </p>
           <div className="litter-gallery">
-            {litter.litterPhotos.map((photo) => (
-              <div className="litter-photo-container">
+            {litter.litterPhotos.map((photo, index) => (
+              <div
+                key={index}
+                className="litter-photo-container"
+                onClick={() => handleOpenModal(litter.litterPhotos, index)}
+              >
                 <img
                   className="litter-photo"
                   src={photo}
@@ -38,6 +71,15 @@ export default function Puppies() {
           </div>
         </div>
       ))}
+      {isModalOpen && (
+        <Modal
+          images={activeLitterPhotos}
+          activeImageIndex={activeImageIndex}
+          closeModal={handleCloseModal}
+          showNextImage={handleShowNextImage}
+          showPrevImage={handleShowPreviousImage}
+        />
+      )}
     </div>
   );
 }

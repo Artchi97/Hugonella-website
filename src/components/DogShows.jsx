@@ -1,5 +1,21 @@
 import { useParams } from "react-router-dom";
 import "../styles/DogShows.css";
+import BackButton from "./BackButton";
+
+function normalizeDate(dateStr) {
+  if (dateStr.includes("-")) {
+    const range = dateStr.split("-");
+    const endDateStr = range[range.length - 1].trim();
+    return parseDate(endDateStr);
+  } else {
+    return parseDate(dateStr);
+  }
+}
+
+function parseDate(dateStr) {
+  const [day, month, year] = dateStr.split(".");
+  return new Date(`${year}-${month}=${day}`);
+}
 
 export default function DogShows({ showsData }) {
   const { dogName } = useParams();
@@ -7,11 +23,17 @@ export default function DogShows({ showsData }) {
   const rows = Array.isArray(showsData?.values) ? showsData.values : [];
   const filteredShows = rows.filter((row) => row[1] === dogName);
 
+  const sortedShows = filteredShows.sort((a, b) => {
+    const dateA = normalizeDate(a[4]);
+    const dateB = normalizeDate(b[4]);
+    return dateB - dateA;
+  });
+
   return (
     <div className="shows-section">
-      <span className="detail-title shows-title">Wystawy: </span>
-      {filteredShows.length > 0 ? (
-        filteredShows.map((show, index) => (
+      <span className="shows-title">Wystawy: </span>
+      {sortedShows.length > 0 ? (
+        sortedShows.map((show, index) => (
           <div key={index} className="show-container">
             <h3 className="show-name">{`${show[2]}`}</h3>
             <p className="show-place">
@@ -37,6 +59,7 @@ export default function DogShows({ showsData }) {
           Brak wystaw dla tego psa.
         </p>
       )}
+      <BackButton className="back-button">{"<<"} Wstecz</BackButton>
     </div>
   );
 }

@@ -145,7 +145,7 @@ nav {
 
   .hamburger-icon {
     display: flex;
-    right: 30px;
+    right: 32px;
     top: 15%;
   }
 
@@ -155,10 +155,15 @@ nav {
   }
 }
 
+@media only screen and (max-width: 520px) {
+  .hamburger-icon {
+    right: 24px;
+  }
+}
+
 @media only screen and (max-width: 450px) {
   .hamburger-icon {
     top: 14%;
-    right: 22px;
   }
 }
 
@@ -169,6 +174,7 @@ nav {
 
   .hamburger-icon {
     top: 15%;
+    right: 24px;
   }
 }
 

@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/DogDetails.css";
 import dogsData from "../dogsData";
+import BackButton from "./BackButton";
 
 export default function DogDetails({ showsData }) {
   const { dogName } = useParams();
@@ -14,6 +15,10 @@ export default function DogDetails({ showsData }) {
 
   function handleShowsClick() {
     navigate(`/shows/${dogName}`);
+  }
+
+  function handleDogGalleryClick() {
+    navigate(`/dog-gallery/${dogName}`);
   }
 
   return (
@@ -73,8 +78,11 @@ export default function DogDetails({ showsData }) {
           {" "}
           Wystawy
         </button>
-        <button className="details-button">Galeria</button>
+        <button className="details-button" onClick={handleDogGalleryClick}>
+          Galeria
+        </button>
       </div>
+      <BackButton className="back-button">{"<<"} Wstecz</BackButton>
     </div>
   );
 }
