@@ -1,19 +1,20 @@
-import { useState, useEffect } from "react";
+import "./App.css";
+import { useState, useEffect, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import ScrollToTop from "./components/ScrollToTop.jsx";
-import Header from "./components/Header.jsx";
-import NavBar from "./components/NavBar.jsx";
-import MainPage from "./components/MainPage.jsx";
-import Footer from "./components/Footer.jsx";
-import OurDogs from "./components/OurDogs.jsx";
-import DogDetails from "./components/DogDetails.jsx";
-import DogShows from "./components/DogShows.jsx";
-import AboutUs from "./components/AboutUs.jsx";
-import Puppies from "./components/Puppies.jsx";
-import DogDetailsGallery from "./components/DogDetailsGallery.jsx";
-
-import "./App.css";
+const ScrollToTop = lazy(() => import("./components/ScrollToTop.jsx"));
+const Header = lazy(() => import("./components/Header.jsx"));
+const NavBar = lazy(() => import("./components/NavBar.jsx"));
+const MainPage = lazy(() => import("./components/MainPage.jsx"));
+const Footer = lazy(() => import("./components/Footer.jsx"));
+const OurDogs = lazy(() => import("./components/OurDogs.jsx"));
+const DogDetails = lazy(() => import("./components/DogDetails.jsx"));
+const DogShows = lazy(() => import("./components/DogShows.jsx"));
+const AboutUs = lazy(() => import("./components/AboutUs.jsx"));
+const Puppies = lazy(() => import("./components/Puppies.jsx"));
+const DogDetailsGallery = lazy(() =>
+  import("./components/DogDetailsGallery.jsx")
+);
 
 function App() {
   const [showsData, setShowsData] = useState([]);
@@ -34,8 +35,8 @@ function App() {
     async function fetchShowsAndFeedData() {
       try {
         const [showsResponse, feedResponse] = await Promise.all([
-          fetch(showsUrl),
-          fetch(feedUrl),
+          fetch("http://localhost:3001/api/shows"),
+          fetch("http://localhost:3001/api/sheets"),
         ]);
 
         const fetchedShowsData = await showsResponse.json();
@@ -53,38 +54,40 @@ function App() {
 
   return (
     <Router>
-      <ScrollToTop />
-      <Header
-        handleNavTextActive={handleNavTextActive}
-        navTextActive={navTextActive}
-      />
-      <div id="container">
-        <NavBar
+      <Suspense fallback={<div>Ładowanie...</div>}>
+        <ScrollToTop />
+        <Header
           handleNavTextActive={handleNavTextActive}
           navTextActive={navTextActive}
         />
-        <main>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/our-dogs" element={<OurDogs />} />
-            <Route
-              path="/dog-details/:dogName"
-              element={<DogDetails showsData={showsData} />}
-            />
-            <Route
-              path="/shows/:dogName"
-              element={<DogShows showsData={showsData} />}
-            ></Route>
-            <Route
-              path="/dog-gallery/:dogName"
-              element={<DogDetailsGallery />}
-            ></Route>
-            <Route path="/puppies" element={<Puppies />}></Route>
-            <Route path="/about-us" element={<AboutUs />}></Route>
-          </Routes>
-        </main>
-      </div>
-      <Footer />
+        <div id="container">
+          <NavBar
+            handleNavTextActive={handleNavTextActive}
+            navTextActive={navTextActive}
+          />
+          <main>
+            <Routes>
+              <Route path="/" element={<MainPage feedData={feedData} />} />
+              <Route path="/our-dogs" element={<OurDogs />} />
+              <Route
+                path="/dog-details/:dogName"
+                element={<DogDetails showsData={showsData} />}
+              />
+              <Route
+                path="/shows/:dogName"
+                element={<DogShows showsData={showsData} />}
+              ></Route>
+              <Route
+                path="/dog-gallery/:dogName"
+                element={<DogDetailsGallery />}
+              ></Route>
+              <Route path="/puppies" element={<Puppies />}></Route>
+              <Route path="/about-us" element={<AboutUs />}></Route>
+            </Routes>
+          </main>
+        </div>
+        <Footer />
+      </Suspense>
     </Router>
   );
 }

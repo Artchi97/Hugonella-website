@@ -1,9 +1,24 @@
 import "../styles/AboutUs.css";
+import { useState, useEffect } from "react";
 import AboutUsImage from "../assets/AboutUs.jpg";
 
 export default function AboutUs() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div className="about-us-container">
+    <div
+      className={`about-us-container fade-in ${
+        isVisible ? "fade-in-active" : ""
+      }`}
+    >
       <div className="about-us-photo-div">
         <img
           className="about-us-img"

@@ -1,5 +1,5 @@
 .about-us-photo-div {
-  width: 50%;
+  width: 60%;
   float: left;
   margin-right: 32px;
 }
@@ -9,7 +9,7 @@
 }
 
 .about-us-section {
-  font-size: 32px;
+  font-size: 24px;
   text-align: justify;
   line-height: 1.6;
 }
@@ -22,29 +22,26 @@
   font-weight: bold;
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: 1200px) {
   .about-us-section {
-    font-size: 24px;
+    font-size: 16px;
   }
-}
 
-@media only screen and (max-width: 768px) {
   .about-us-photo-div {
-    width: 100%;
-    float: none;
-    margin-right: 0;
-    margin-bottom: 48px;
+    width: 50%;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .about-us-section {
-    font-size: 16px;
+  .about-us-photo-div {
+    width: 100%;
+    float: none;
+    margin-bottom: 24px;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .about-us-section {
-    padding: 0 16px 0 16px;
+    padding: 0 24px;
   }
 }

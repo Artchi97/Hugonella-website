@@ -1,14 +1,23 @@
 import "../styles/DogDetailsGallery.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import dogsData from "../dogsData";
 import Modal from "./Modal";
 import BackButton from "./BackButton";
 
 export default function DogDetailsGallery() {
+  const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const { dogName } = useParams();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // Opóźnienie przed rozpoczęciem animacji
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const filteredArray = dogsData.filter((dog) => dog.dogName === dogName);
 
@@ -42,7 +51,11 @@ export default function DogDetailsGallery() {
   }
 
   return (
-    <div className="dog-gallery-main-container">
+    <div
+      className={`dog-gallery-main-container fade-in ${
+        isVisible ? "fade-in-active" : ""
+      }`}
+    >
       {images.map((photo, index) => (
         <div key={index} className="dog-gallery-container">
           <img

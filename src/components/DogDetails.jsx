@@ -1,11 +1,21 @@
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../styles/DogDetails.css";
 import dogsData from "../dogsData";
 import BackButton from "./BackButton";
 
 export default function DogDetails({ showsData }) {
+  const [isVisible, setIsVisible] = useState(false);
   const { dogName } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const dog = dogsData.find((d) => d.dogName === dogName);
 
@@ -22,7 +32,11 @@ export default function DogDetails({ showsData }) {
   }
 
   return (
-    <div className="dog-details-main-div">
+    <div
+      className={`dog-details-main-div fade-in ${
+        isVisible ? "fade-in-active" : ""
+      }`}
+    >
       <div className="dog-details-above-img">
         <h2 className="dog-details-fullname">{dog.fullName}</h2>
         <p className="dog-details-name">"{dog.dogName}"</p>

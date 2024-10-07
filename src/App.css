@@ -33,6 +33,19 @@ a {
   transition: opacity 300ms, transform 300ms;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(
+    20px
+  ); /* Możesz zmienić na translateX(20px) dla wejścia z boku */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Czas trwania animacji */
+}
+
+.fade-in-active {
+  opacity: 1;
+  transform: translateY(0); /* Powrót do pozycji oryginalnej */
+}
+
 @media only screen and (max-width: 1300px) {
   #container {
     width: 80vw;

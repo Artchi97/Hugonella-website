@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Puppies.css";
 import litters from "../litters";
 import Modal from "./Modal";
 
 export default function Puppies() {
+  const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [activeLitterPhotos, setActiveLitterPhotos] = useState([]);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100); // Opóźnienie przed rozpoczęciem animacji
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   function handleOpenModal(photos, index) {
     setActiveLitterPhotos(photos);
@@ -32,7 +41,11 @@ export default function Puppies() {
   }
 
   return (
-    <div className="dog-details-gallery-container">
+    <div
+      className={`dog-details-gallery-container fade-in ${
+        isVisible ? "fade-in-active" : ""
+      }`}
+    >
       {litters.map((litter) => (
         <div className="litter-container" key={litter.litterName}>
           <h2 className="litter-h2">{litter.litterName}</h2>

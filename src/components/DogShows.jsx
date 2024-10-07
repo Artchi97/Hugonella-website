@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/DogShows.css";
 import BackButton from "./BackButton";
@@ -18,7 +19,16 @@ function parseDate(dateStr) {
 }
 
 export default function DogShows({ showsData }) {
+  const [isVisible, setIsVisible] = useState(false);
   const { dogName } = useParams();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   const rows = Array.isArray(showsData?.values) ? showsData.values : [];
   const filteredShows = rows.filter((row) => row[1] === dogName);
@@ -30,7 +40,9 @@ export default function DogShows({ showsData }) {
   });
 
   return (
-    <div className="shows-section">
+    <div
+      className={`shows-section fade-in ${isVisible ? "fade-in-active" : ""}`}
+    >
       <span className="shows-title">Wystawy: </span>
       {sortedShows.length > 0 ? (
         sortedShows.map((show, index) => (

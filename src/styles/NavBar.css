@@ -120,7 +120,7 @@ nav {
     right: -100%;
     width: 50vw;
     height: 100vh;
-    background-color: var(--main-color-hamburger-button);
+    background-color: var(--hamburger-menu-background);
     padding: 48px 16px;
     box-shadow: 2px 2px 8px black;
     z-index: 1000;

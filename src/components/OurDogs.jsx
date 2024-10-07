@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/OurDogs.css";
@@ -7,8 +8,22 @@ export default function OurDogs() {
   const retiredDogs = dogsData.filter((dog) => dog.status === "retired");
   const activeDogs = dogsData.filter((dog) => dog.status === "active");
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
-    <div className="our-dogs-image-container">
+    <div
+      className={`our-dogs-image-container fade-in ${
+        isVisible ? "fade-in-active" : ""
+      }`}
+    >
       {activeDogs.map((dog) => (
         <div key={dog.dogName} className="dog-main-container">
           <Link to={`/dog-details/${dog.dogName}`}>
